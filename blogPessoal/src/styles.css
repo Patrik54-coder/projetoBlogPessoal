@@ -2,4 +2,12 @@
 html{
     scroll-behavior: smooth;
 }
-
+.fs-48{
+    font-size: 48pt;
+}
+.fs-18{
+    font-size: 15pt;
+}
+.cor-fundo{
+    background-color:#fa9745;
+}
