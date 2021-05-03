@@ -13,12 +13,17 @@ padding: 5px;
     padding: 10px;
 }
 .fa-facebook-square:hover{
-    color: purple;
+    color: gray;
 }
 .fa-instagram:hover{
-    color: purple;
+    color: gray;
 }
 .fa-linkedin:hover{
-    color:purple; 
+    color:gray; 
 }
-
+#cop{
+    color: white;
+}
+#fundo-footer{
+    background-color: #fa9745;
+}
