@@ -1,4 +1,4 @@
-import { tema } from "./tema";
+import { Tema } from "./tema";
 import { user } from "./user";
 
 
@@ -8,5 +8,5 @@ export class postagem {
 	public texto: string
     public data : Date
     public Usuario : user
-    public tema: tema
+    public tema: Tema
 }
