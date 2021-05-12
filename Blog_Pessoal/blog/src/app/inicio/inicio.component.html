@@ -1,0 +1,190 @@
+<!--apresentação-->
+<div class="container-fluid">
+    <div class="row bg-secondary d-flex align-items-center cor-fundo">
+        <div class="col-md-6 text-white text-left">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6">
+                    <h1 class="fs-48">Seja bem vindo(a)!</h1>
+                    <h5 class="fs-18">expresse aqui os seus pensamentos e opniões!</h5>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center mt-3 mb-5">
+                <div class="col-md-6">
+                    <button class="btn btn-light mr-2" type="button" data-toggle="modal"
+                        data-target="#novaPostagem">Nova Postagem</button>
+                    <a class="btn btn-outline-light" href="#postagens">Ver Postagens</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-6 d-flex justify-content-center">
+            <img src="../../assets/fundo-iniciar-teste.png" width="450px" height="500px" alt="">
+        </div>
+    </div>
+</div>
+<!--apresentação-->
+
+
+
+<!--Postagens-->
+
+<div class="container mt-5 mb-5" id="postagens">
+
+    <!--Navegação-->
+
+
+    <nav>
+        <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+                aria-controls="nav-home" aria-selected="true">Todas as Postagens</a>
+
+            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+                aria-controls="nav-profile" aria-selected="false">Postagens por Tema</a>
+
+            <a (click)='getByIdUser()' class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab"
+                href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Minhas Postagens</a>
+        </div>
+    </nav>
+
+    <div class="tab-content mt-5" id="nav-tabContent">
+        <!--Todas as postagens-->
+        <div class="tab-pane fade show active mt-2" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+            <div class="card-deck d-flex justify-content-center">
+                <div class="card border-secondary mb-3" style="max-width: 18rem;" *ngFor='let item of listaPostagem'>
+                    <div class="card-header bg-transparent border-secondary ">
+                        <small class="text-dark">{{item.usuario.usuario}}->
+                        </small>
+                        <small class="text-muted">{{item.tema.descricao}}
+                        </small>
+                    </div>
+                    <div class="card-body text-secondary d-flex justify-content-center">
+                        <h5 class="card-title">{{item.titulo}}</h5>
+                        <p class="card-text">{{item.texto}}</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-secondary">
+                        <small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:
+                            'HH:mm'}}
+
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--/Todas as postagens-->
+        <!--Postagens por Tema-->
+        <div class="tab-pane fade mt-2" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <div class="card-deck d-flex justify-content-center">
+                <div class="card border-secondary  mb-3" style="max-width: 18rem;" *ngFor='let item of listaPostagem'>
+                    <div class="card-header bg-transparent border-secondary  ">
+                        <small class="text-secondary ">{{item.usuario.usuario}}->
+                        </small>
+                        <small class="text-muted">{{item.tema.descricao}}
+                        </small>
+                    </div>
+                    <div class="card-body text-secondary d-flex justify-content-center">
+                        <h5 class="card-title">{{item.titulo}}</h5>
+                        <p class="card-text">{{item.texto}}</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-secondary ">
+                        <small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:
+                            'HH:mm'}}
+
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--/Postagens por Tema-->
+        <!--Minhas Postagens-->
+        <div class="tab-pane fade mt-2" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+            <div class="card-deck d-flex justify-content-center">
+                <div class="card border-secondary mb-3" style="max-width: 18rem;" *ngFor='let item of user.postagem'>
+                    <div class="card-header bg-transparent border-secondary ">
+
+                        <small class="text-muted">{{item.tema.descricao}}
+                        </small>
+                    </div>
+                    <div class="card-body text-secondary">
+                        <h5 class="card-title">{{item.titulo}}</h5>
+                        <p class="card-text">{{item.texto}}</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-secondary">
+                        <div>
+                            <small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:
+                                'HH:mm'}} </small>
+                        </div>
+                        <!--<div>
+                            <button type="button" class="btn btn-outline-danger">Danger</button>
+                            <button  type="button" data-toggle="modal" data-target="#editarPostagem"
+                                class="btn btn-outline-warning">Editarmodal</button>
+                        </div>-->
+
+
+                        <div class="mt-2">
+                            <button [routerLink]="['/postagem-delet', item.id]" type="button"
+                                class="btn mr-3 btn-outline-danger">Excluir</button>
+                            <button [routerLink]="['/postagem-edit', item.id]" type="button" data-toggle="modal"
+                                data-target="#editarPostagem" class="btn btn-outline-info">Editar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/Minhas Postagens-->
+    </div>
+
+
+    <!--/Navegação-->
+
+
+    <!-- Modal para scroll-->
+    <div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="TituloModalCentralizado">Nova Postagem</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!--Formulario nova postagem-->
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="titulo">Título</label>
+                        <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="titulo"
+                            placeholder="Digite o título">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="texto">Texto</label>
+                        <textarea [(ngModel)]="postagem.texto" class="form-control" id="texto" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tema">Escolha seu tema ou <a routerLink='/tema' data-dismiss="modal">cadastre um
+                                novo</a>:
+                        </label>
+                        <select [(ngModel)]='idTema' (change)='getByIdTema()' class="form-control" name="tema"
+                            id="tema">
+                            <option *ngFor='let item of listaTemas' value='{{item.id}}'>
+                                {{item.descricao}}
+                            </option>
+                        </select>
+                    </div>
+                    <!--/Formulario nova postagem-->
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal" (click)='enviar()'
+                        data-dimiss='modal'>Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    

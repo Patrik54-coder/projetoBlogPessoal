@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary cor-fundo">
+    <!--Botão respon-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <!--/Botão respon-->
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <!--Menu esquerdo perfil-->
+        <ul class="navbar-nav mr-auto d-flex align-items-center ">
+            <!--Imagem perfil usuario-->
+            <li class="nav-item active">
+                <img src="{{foto}}" alt="Imagem do usuario" width="50px" height="50px" class="img-fluid rounded-circle">
+            </li>
+            <!--/Imagem perfil usuario-->
+            <!--Nome do Usuario-->
+            <li class="nav-item pl-3">
+                <p class="m-0 font-weight-bold text-white fs-16"> Ola, {{usuario}}
+                </p>
+            </li>
+            <!--/Nome do Usuario-->
+            <!--Botão editar perfil-->
+            <li class="nav-item pl-3">
+                <a>
+                    <p class="text-white fs-16 m-0">
+                        <i class="fa fa-pencil-square-o " aria-hidden="true"></i>
+                    </p>
+                </a>
+            </li>
+            <!--Botão editar perfil-->
+        </ul>
+        <!--/Menu esquerdo perfil-->
+        <!--Menu direito sair-->
+        <ul class="navbar-nav ml-auto d-flex align-items-center linkBlack ">
+            <li class="nav-item pl-3 linkBlack">
+                <a (click)='sair' class="m-0  text-white fs-16 linkBlack" routerLink='/entrar'>
+                    <strong class="linkBlack">Sair <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    </strong>
+                </a>
+            </li>
+        </ul>
+        <!--/Menu direito sair-->
+    </div>
+</nav>

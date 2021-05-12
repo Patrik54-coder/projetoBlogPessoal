@@ -1,0 +1,28 @@
+.icoGit{
+    font-size: 35pt;
+    color: aliceblue;
+    padding: 10px;
+}
+
+.icoLink{
+    font-size: 35pt;
+    color: aliceblue;
+    padding: 10px;
+}
+
+.fa:hover{
+    color: black;
+}
+
+
+
+ul.social-network{
+    list-style: none;
+    padding: 0px;
+}
+ul.social-network li{
+    display: inline;
+    margin: 0px;
+    padding: 5px;
+    }
+
