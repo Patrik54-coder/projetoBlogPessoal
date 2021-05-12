@@ -16,6 +16,7 @@ import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { TemaDeletComponent } from './edit/tema-delet/tema-delet.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { PostagemDeletComponent } from './edit/postagem-delet/postagem-delet.component';
+import { UserEditComponent } from './edit/user-edit/user-edit.component';
 
 
 
@@ -31,7 +32,8 @@ import { PostagemDeletComponent } from './edit/postagem-delet/postagem-delet.com
     TemaEditComponent,
     TemaDeletComponent,
     PostagemEditComponent,
-    PostagemDeletComponent
+    PostagemDeletComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
