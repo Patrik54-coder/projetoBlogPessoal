@@ -17,6 +17,8 @@ import { TemaDeletComponent } from './edit/tema-delet/tema-delet.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { PostagemDeletComponent } from './edit/postagem-delet/postagem-delet.component';
 import { UserEditComponent } from './edit/user-edit/user-edit.component';
+import { AlertasComponent } from './alertas/alertas.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 
@@ -33,13 +35,15 @@ import { UserEditComponent } from './edit/user-edit/user-edit.component';
     TemaDeletComponent,
     PostagemEditComponent,
     PostagemDeletComponent,
-    UserEditComponent
+    UserEditComponent,
+    AlertasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot()
   ],
   providers: [
     {
