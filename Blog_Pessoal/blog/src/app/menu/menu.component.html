@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-secondary cor-fundo">
+<nav class="navbar navbar-expand-lg navbar-light cor-fundo">
     <!--Botão respon-->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
@@ -15,13 +15,13 @@
             <!--/Imagem perfil usuario-->
             <!--Nome do Usuario-->
             <li class="nav-item pl-3">
-                <p class="m-0 font-weight-bold text-white fs-16"> Ola, {{usuario}}
+                <p class="m-0 font-weight-bold text-white fs-16"> Ola, {{nome}}
                 </p>
             </li>
             <!--/Nome do Usuario-->
             <!--Botão editar perfil-->
             <li class="nav-item pl-3">
-                <a>
+                <a [routerLink]="['/user-edit', id]">
                     <p class="text-white fs-16 m-0">
                         <i class="fa fa-pencil-square-o " aria-hidden="true"></i>
                     </p>
